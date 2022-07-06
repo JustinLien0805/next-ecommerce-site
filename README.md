@@ -1,34 +1,5 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+# Next.js Ecommerce site (in progress)
+<img width="1440" alt="截圖 2022-07-06 下午1 57 05" src="https://user-images.githubusercontent.com/74034793/177479332-62d6a1e6-e882-4d53-8e59-b38267937ca5.png">
+<img width="1440" alt="截圖 2022-07-06 下午1 56 51" src="https://user-images.githubusercontent.com/74034793/177479310-25ae69e1-df84-4b53-a90c-f7d9393b6140.png">
+<img width="1440" alt="截圖 2022-07-06 下午1 57 29" src="https://user-images.githubusercontent.com/74034793/177479339-2c64f1be-ee85-4ccc-8e02-d835fc2afbed.png">
+<img width="1440" alt="截圖 2022-07-06 下午1 57 42" src="https://user-images.githubusercontent.com/74034793/177479343-f88ce4c9-a15a-40d4-af88-1c423845a6a0.png">
