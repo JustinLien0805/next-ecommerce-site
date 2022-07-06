@@ -1,13 +1,9 @@
-import {
-  FaTshirt,
-  FaRedhat,
-  GiConverseShoe,
-  GiPearlNecklace,
-  FaShoppingBag,
-  BsWatch,
-  BsSunglasses,
-} from "react-icons/fa";
+import { FaTshirt, FaRedhat, FaShoppingBag } from "react-icons/fa";
+import { GiConverseShoe, GiPearlNecklace } from "react-icons/gi";
+import { BsWatch, BsSunglasses } from "react-icons/bs";
 import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
+import Link from "next/link";
 const colors = [
   "bg-gradient-to-r from-cyan-500 to-blue-500",
   "bg-gradient-to-r from-blue-500 to-purple-500",
@@ -21,48 +17,27 @@ const colors = [
 ];
 
 const Genre = (genre) => {
+  const router = useRouter();
   const [color, setColor] = useState(null);
   const genreName = genre.genre.name;
-
-  const chooseIcon = (genreName) => {
-    switch (genreName) {
-      case "T-Shirt":
-        return <FaTshirt />;
-        break;
-      case "Hats":
-        return <FaRedhat />;
-        break;
-      case "Shoes":
-        return <GiConverseShoe />;
-        break;
-      case "Accessories":
-        return <GiPearlNecklace />;
-        break;
-      case "Bags":
-        return <FaShoppingBag />;
-        break;
-      case "Watches":
-        return <BsWatch />;
-        break;
-      case "Sunglasses":
-        return <BsSunglasses />;
-        break;
-      default:
-        return <FaTshirt />;
-        break;
-    }
-  };
-
   useEffect(() => {
     setColor(colors[Math.floor(Math.random() * colors.length)]);
   });
   return (
-    <div className={`w-full h-40 ${color} rounded-lg pl-4 pr-8 py-8 `}>
-      <h1 className="text-white font-bold text-xl">{genre.genre.name}</h1>
-      <div className="text-white text-7xl h-full flex justify-end items-center">
-        {}
+    <Link href={`/genre/${genreName}`}>
+      <div className={`w-full h-40 ${color} rounded-lg pl-4 pr-8 py-8 `}>
+        <h1 className="text-white font-bold text-xl">{genre.genre.name}</h1>
+        <div className="text-white text-7xl h-full flex justify-end items-center">
+          {(genreName === "T-Shirt" && <FaTshirt />) ||
+            (genreName === "Hats" && <FaRedhat />) ||
+            (genreName === "Shoes" && <GiConverseShoe />) ||
+            (genreName === "Accessories" && <GiPearlNecklace />) ||
+            (genreName === "Bags" && <FaShoppingBag />) ||
+            (genreName === "Watches" && <BsWatch />) ||
+            (genreName === "Sunglasses" && <BsSunglasses />)}
+        </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
