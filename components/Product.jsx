@@ -11,23 +11,25 @@ const Product = ({ id }) => {
     removeFromCart,
   } = useContext(ShoppingCartContext);
   const [quantity, setQuantity] = useState(0);
-  const itemQuantity = getItemQuantity(id);
-  useEffect(()=>{
-    setQuantity(itemQuantity)
-  },[itemQuantity])
+  // const itemQuantity = getItemQuantity(id);
+  // useEffect(()=>{
+  //   setQuantity(itemQuantity)
+  // },[itemQuantity])
+  useEffect(() => {}, []);
+
   const selectProduct = () => {
     setProductId(id);
     setSelected(true);
   };
   const addQuantity = (id) => {
-    increaseCartQuantity(id);
+    //increaseCartQuantity(id);
   };
   const removeQuantity = (id) => {
-    if (quantity === 1) {
-      removeFromCart(id);
-    } else {
-      decreaseCartQuantity(id);
-    }
+    // if (quantity === 1) {
+    //   removeFromCart(id);
+    // } else {
+    //   decreaseCartQuantity(id);
+    // }
   };
 
   return (
