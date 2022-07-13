@@ -1,14 +1,14 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Cart from "./Cart";
 import { ShoppingCartContext } from "../context/ShoppingCartContext";
 import { useRouter } from "next/router";
 const Header = () => {
   const router = useRouter();
+  const [selectCart, setSelectCart] = useState(false);
   const handleClick = (e) => {
     e.preventDefault();
     router.push("/");
   };
-
   const { total } = useContext(ShoppingCartContext);
   return (
     <div className="flex w-full my-6">
@@ -18,7 +18,10 @@ const Header = () => {
       >
         SHART
       </h1>
-      <div className="relative">
+      <div
+        className="relative cursor-pointer"
+        onClick={() => setSelectCart(true)}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className=" text-violet-500 h-12 w-12"
@@ -39,10 +42,46 @@ const Header = () => {
           </div>
         )}
       </div>
-      {/* <div className="absolute h-screen w-1/2 bg-neutral-700 right-0 top-0 z-[100]">
-        <h1>Cart</h1>
-        <Cart />
-      </div> */}
+      {selectCart && (
+        <>
+          <div className="absolute h-screen sm:w-1/3 w-full bg-white right-0 top-0 z-[100] p-4">
+            <div className="flex text-black flex-cols text-lg sm:text-3xl">
+              <h1 className="mr-auto mb-4 font-bold">CART</h1>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6 sm:h-8 sm:w-8 cursor-pointer"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+                onClick={() => {
+                  setSelectCart(false);
+                }}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </div>
+            <Cart />
+            <Cart />
+            <div className="flex justify-end">
+              <h2 className="text-3xl">Total: $18000</h2>
+            </div>
+            <div className="flex justify-center items-center rounded-lg border-2 border-black mt-4 hover:text-white hover:bg-black cursor-pointer">
+              <h2>CHECKOUT</h2>
+            </div>
+          </div>
+          <div
+            className="bg-neutral-900 h-screen w-full z-[60] fixed opacity-50 cursor-pointer"
+            onClick={() => {
+              setSelectCart(false);
+            }}
+          ></div>
+        </>
+      )}
     </div>
   );
 };

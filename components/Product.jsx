@@ -35,7 +35,7 @@ const Product = ({ id }) => {
   return (
     <>
       <div
-        className={`w-96 h-60 mb-10 cursor-pointer group transform transition duration-300 ${
+        className={`h-60 w-[20rem] mb-10 cursor-pointer group transform transition duration-300 ${
           productId === id
             ? "z-[60] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 lg:scale-150"
             : "hover:scale-105"
