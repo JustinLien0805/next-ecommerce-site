@@ -11,33 +11,33 @@ const Product = ({ id }) => {
     removeFromCart,
   } = useContext(ShoppingCartContext);
   const [quantity, setQuantity] = useState(0);
-  // const itemQuantity = getItemQuantity(id);
-  // useEffect(()=>{
-  //   setQuantity(itemQuantity)
-  // },[itemQuantity])
-  useEffect(() => {}, []);
 
   const selectProduct = () => {
     setProductId(id);
     setSelected(true);
   };
-  const addQuantity = (id) => {
-    //increaseCartQuantity(id);
+  const addQuantity = () => {
+    setQuantity(quantity + 1);
+    increaseCartQuantity(id);
   };
-  const removeQuantity = (id) => {
-    // if (quantity === 1) {
-    //   removeFromCart(id);
-    // } else {
-    //   decreaseCartQuantity(id);
-    // }
+  const removeQuantity = () => {
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+      decreaseCartQuantity(id);
+    } else if (quantity === 1) {
+      removeFromCart(id);
+      setQuantity(quantity - 1);
+    }
   };
+
+  useEffect(() => {setQuantity(getItemQuantity(id))}, []);
 
   return (
     <>
       <div
         className={`w-96 h-60 mb-10 cursor-pointer group transform transition duration-300 ${
           productId === id
-            ? "z-[60] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 scale-150"
+            ? "z-[60] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 lg:scale-150"
             : "hover:scale-105"
         }`}
         onClick={selectProduct}

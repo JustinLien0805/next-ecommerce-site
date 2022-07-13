@@ -29,12 +29,12 @@ const GenreProduct = () => {
   }, []);
   return (
     <ProductContextProvider>
-      <div className="bg-black h-screen flex md:px-44 px-20 flex-col overflow-scroll items-center">
+      <div className="bg-black h-screen flex md:px-44 px-4 flex-col overflow-scroll items-center">
         <Overlay />
         <Header />
         <h1 className="text-white text-5xl font-bold mt-5 ">{genreName}</h1>
         <hr className={`border-t-4 border-${color}-400 w-32`} />
-        <div className="mt-8 grid  lg:grid-cols-2 gap-10">
+        <div className="mt-8 grid lg:grid-cols-2 gap-10 mx-4">
           {[1, 2, 3].map((i) => (
             <Product id={i} key={i} />
           ))}
