@@ -25,7 +25,7 @@ const Header = () => {
   }, [cart]);
 
   return (
-    <div className="w-full bg-black sticky top-0 z-50">
+    <div className="w-full bg-black sticky top-0 z-[60]">
       <div className="flex px-8 py-4">
         <h1
           className="font-bold text-5xl text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-purple-700 mr-auto cursor-pointer"

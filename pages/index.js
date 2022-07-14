@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Header from "../components/Header";
 import Slide from "../components/Slide";
 import Genres from "../components/Genres";
 export default function Home() {

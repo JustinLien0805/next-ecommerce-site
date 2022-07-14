@@ -4,7 +4,6 @@ import {
   ProductContextProvider,
   ProductContext,
 } from "../../../context/productContext";
-import Header from "../../../components/Header";
 import Product from "../../../components/Product";
 import data from "../../../data/data";
 
@@ -38,7 +37,7 @@ const GenreProduct = () => {
         <h1 className="text-white text-5xl font-bold mt-5 ">{genreName}</h1>
         <hr className={`border-t-4 border-${color}-400 w-32`} />
         <div className="mt-8 grid lg:grid-cols-2 gap-10 mx-4">
-          {products.map((product,i) => (
+          {products.map((product, i) => (
             <Product product={product} key={i} />
           ))}
         </div>
@@ -52,7 +51,9 @@ const Overlay = () => {
   return (
     <div
       className={
-        selected ? `bg-neutral-900 h-screen w-full z-[60] fixed opacity-50 top-0` : ""
+        selected
+          ? `bg-neutral-900 h-screen w-full z-[60] fixed opacity-50 top-0`
+          : ""
       }
       onClick={() => {
         setSelected(false);
