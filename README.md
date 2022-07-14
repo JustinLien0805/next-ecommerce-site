@@ -1,5 +1,6 @@
 # Next.js Ecommerce site with Stripe
-<img width="1440" alt="截圖 2022-07-06 下午1 57 05" src="https://user-images.githubusercontent.com/74034793/177479332-62d6a1e6-e882-4d53-8e59-b38267937ca5.png">
-<img width="1440" alt="截圖 2022-07-06 下午1 56 51" src="https://user-images.githubusercontent.com/74034793/177479310-25ae69e1-df84-4b53-a90c-f7d9393b6140.png">
-<img width="1440" alt="截圖 2022-07-06 下午1 57 29" src="https://user-images.githubusercontent.com/74034793/177479339-2c64f1be-ee85-4ccc-8e02-d835fc2afbed.png">
-<img width="1440" alt="截圖 2022-07-06 下午1 57 42" src="https://user-images.githubusercontent.com/74034793/177479343-f88ce4c9-a15a-40d4-af88-1c423845a6a0.png">
+<img width="1411" alt="截圖 2022-07-14 下午4 40 08" src="https://user-images.githubusercontent.com/74034793/178941657-2c389abb-4f42-40b4-9efc-64966728ae34.png">
+<img width="1413" alt="截圖 2022-07-14 下午4 40 27" src="https://user-images.githubusercontent.com/74034793/178941696-884b14cd-99a2-48d9-90c2-eed29b7554b5.png">
+<img width="1409" alt="截圖 2022-07-14 下午4 40 53" src="https://user-images.githubusercontent.com/74034793/178941706-f798cd3b-c686-47dc-8da8-6ef282ee1168.png">
+<img width="767" alt="截圖 2022-07-14 下午4 41 02" src="https://user-images.githubusercontent.com/74034793/178941716-bac28a7c-cf72-4145-ad87-4cf1f7f0e283.png">
+<img width="1410" alt="截圖 2022-07-14 下午4 41 13" src="https://user-images.githubusercontent.com/74034793/178941712-171cea31-58f8-4544-abff-def0ef6cf05f.png">
