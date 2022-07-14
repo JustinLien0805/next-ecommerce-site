@@ -4,9 +4,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { wrap } from "popmotion";
 
 const images = [
-  "https://d33wubrfki0l68.cloudfront.net/dd23708ebc4053551bb33e18b7174e73b6e1710b/dea24/static/images/wallpapers/shared-colors@2x.png",
-  "https://d33wubrfki0l68.cloudfront.net/49de349d12db851952c5556f3c637ca772745316/cfc56/static/images/wallpapers/bridge-02@2x.png",
-  "https://d33wubrfki0l68.cloudfront.net/594de66469079c21fc54c14db0591305a1198dd6/3f4b1/static/images/wallpapers/bridge-01@2x.png",
+  "https://agirls.aottercdn.com/media/bfd55b99-81fd-473a-98d9-9c41734a2296.jpg",
+  "https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_1295,h_720,f_auto/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/au85ntcczwugzzs9gwuh/HandmadeRingMakingWorkshop-Klook客路.jpg",
+  "https://cdn-img.look-in.com.tw/upload/images/batch_IMG_5275.jpg",
 ];
 
 const variants = {
@@ -43,7 +43,7 @@ const Slide = () => {
   };
 
   return (
-    <div className="flex justify-center relative py-6 h-auto">
+    <div className="flex justify-center relative py-6 bg-cover h-">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="text-sky-500 absolute w-10 h-10 z-50 rounded-full flex justify-center items-center text-2xl top-[calc(50%-20px)] left-0"
@@ -59,6 +59,7 @@ const Slide = () => {
       </svg>
       <AnimatePresence initial={false} custom={direction}>
         <motion.img
+          className="h-fit w-fit"
           key={page}
           src={images[imageIndex]}
           custom={direction}

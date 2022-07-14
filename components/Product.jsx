@@ -2,7 +2,7 @@ import { useState, useContext, useEffect } from "react";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import { ProductContext } from "../context/productContext";
 import { ShoppingCartContext } from "../context/ShoppingCartContext";
-const Product = ({ id }) => {
+const Product = ({ product }) => {
   const { setSelected, productId, setProductId } = useContext(ProductContext);
   const {
     getItemQuantity,
@@ -13,57 +13,68 @@ const Product = ({ id }) => {
   const [quantity, setQuantity] = useState(0);
 
   const selectProduct = () => {
-    setProductId(id);
+    setProductId(product.id);
     setSelected(true);
   };
   const addQuantity = () => {
     setQuantity(quantity + 1);
-    increaseCartQuantity(id);
+    increaseCartQuantity(product.id);
   };
   const removeQuantity = () => {
     if (quantity > 1) {
       setQuantity(quantity - 1);
-      decreaseCartQuantity(id);
+      decreaseCartQuantity(product.id);
     } else if (quantity === 1) {
-      removeFromCart(id);
+      removeFromCart(product.id);
       setQuantity(quantity - 1);
     }
   };
 
-  useEffect(() => {setQuantity(getItemQuantity(id))}, []);
+  useEffect(() => {
+    setQuantity(getItemQuantity(product.id));
+  }, []);
 
   return (
     <>
       <div
         className={`h-60 w-[20rem] mb-10 cursor-pointer group transform transition duration-300 ${
-          productId === id
-            ? "z-[60] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 lg:scale-150"
+          productId === product.id
+            ? "z-[70] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 lg:scale-150"
             : "hover:scale-105"
         }`}
         onClick={selectProduct}
       >
         <img
-          src="https://hk.hypebeast.com/files/2022/03/rolex-watches-and-wonders-2022-oyster-perpetual-air-king-gmt-master-ii-day-date-40-yacht-master-42-datejust-31-yacht-master-40-1.jpg"
+          src={product.img}
           className="object-cover w-full h-full rounded-[1rem] "
         />
 
         <div className="flex items-center gap-5">
           <div className="mr-auto">
             <h1 className={"text-white bottom-10 font-bold text-2xl mt-2"}>
-              GMT-Master II
+              {product.name}
             </h1>
-            <h3 className="text-neutral-500 text-lg group-hover:text-white">
-              $9000
+            <h3
+              className={`text-neutral-500 text-lg ${
+                productId !== product.id && "group-hover:text-white"
+              }`}
+            >
+              ${product.price}
             </h3>
           </div>
-          {productId === id && (
-            <div className="flex text-white gap-4">
-              <button onClick={addQuantity}>
-                <FaPlus className="" size="2em" />
-              </button>
-              <h1 className="text-2xl">{quantity}</h1>
-              <button onClick={removeQuantity}>
-                <FaMinus className="" size="2em" />
+          {productId === product.id && (
+            <div className="flex flex-col">
+              <div className="flex text-white gap-4 my-2">
+                <button onClick={addQuantity}>
+                  <FaPlus className="" size="1.5em" />
+                </button>
+                <h1 className="text-2xl">{quantity}</h1>
+                <button onClick={removeQuantity}>
+                  <FaMinus className="" size="1.5em" />
+                </button>
+              </div>
+              <button className="text-white border-[1px] border-white rounded-lg hover:text-black hover:bg-white">
+                Add to Cart
               </button>
             </div>
           )}

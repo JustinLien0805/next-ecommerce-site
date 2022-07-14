@@ -45,8 +45,9 @@ export function ShoppingCartProvider({ children }) {
   };
 
   const removeFromCart = (id) => {
-    setTotal(total - 1);
+    
     setCart((currentItems) => {
+      setTotal(total - getItemQuantity(id));
       return currentItems.filter((item) => item.id !== id);
     });
   };
@@ -57,6 +58,7 @@ export function ShoppingCartProvider({ children }) {
     decreaseCartQuantity,
     removeFromCart,
     total,
+    cart,
   };
   return (
     <ShoppingCartContext.Provider value={value}>
