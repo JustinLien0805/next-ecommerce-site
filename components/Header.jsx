@@ -3,7 +3,6 @@ import Cart from "./Cart";
 import { ShoppingCartContext } from "../context/ShoppingCartContext";
 import { useRouter } from "next/router";
 import data from "../data/data";
-import { checkout } from "../utils/checkout";
 
 const Header = () => {
   const router = useRouter();
@@ -30,7 +29,7 @@ const Header = () => {
     <div className="w-full bg-black sticky top-0 z-[60]">
       <div className="flex px-8 py-4">
         <h1
-          className="font-bold text-5xl text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-purple-700 mr-auto cursor-pointer"
+          className="font-bold text-4xl sm:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-purple-700 mr-auto cursor-pointer"
           onClick={handleClick}
         >
           SHART
@@ -44,7 +43,7 @@ const Header = () => {
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className=" text-violet-500 h-12 w-12"
+            className=" text-violet-500 h-9 w-9 sm:h-12 sm:w-12"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -107,14 +106,8 @@ const Header = () => {
               <div
                 className="flex justify-center items-center h-8 rounded-lg bg-violet-700 text-white mt-4 hover:text-white hover:bg-black cursor-pointer"
                 onClick={() => {
-                  checkout({
-                    lineItems: [
-                      {
-                        price: process.env.PRICE_ID,
-                        quantity: 1,
-                      },
-                    ],
-                  });
+                  router.push("/checkout");
+                  setSelectCart(false);
                 }}
               >
                 <h2>CHECKOUT</h2>

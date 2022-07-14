@@ -22,7 +22,7 @@ const Genre = (genre) => {
   const genreName = genre.genre.name;
   useEffect(() => {
     setColor(colors[Math.floor(Math.random() * colors.length)]);
-  });
+  }, []);
   return (
     <Link href={`/genre/${genreName}`}>
       <div className={`w-full h-40 ${color} rounded-lg pl-4 pr-8 py-8 `}>
