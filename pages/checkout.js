@@ -1,5 +1,4 @@
 import { loadStripe } from "@stripe/stripe-js";
-
 import { useContext, useState, useEffect } from "react";
 import Cart from "../components/Cart";
 import { ShoppingCartContext } from "../context/ShoppingCartContext";
@@ -8,7 +7,7 @@ import data from "../data/data";
 const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
 );
-const checkout = () => {
+const Checkout = () => {
   const router = useRouter();
   const [totalPrice, setTotalPrice] = useState(0);
   const { cart } = useContext(ShoppingCartContext);
@@ -80,4 +79,4 @@ const checkout = () => {
   );
 };
 
-export default checkout;
+export default Checkout;
