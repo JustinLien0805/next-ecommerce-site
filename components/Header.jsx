@@ -3,6 +3,8 @@ import Cart from "./Cart";
 import { ShoppingCartContext } from "../context/ShoppingCartContext";
 import { useRouter } from "next/router";
 import data from "../data/data";
+import { checkout } from "../utils/checkout";
+
 const Header = () => {
   const router = useRouter();
   const [selectCart, setSelectCart] = useState(false);
@@ -105,7 +107,14 @@ const Header = () => {
               <div
                 className="flex justify-center items-center h-8 rounded-lg bg-violet-700 text-white mt-4 hover:text-white hover:bg-black cursor-pointer"
                 onClick={() => {
-                  router.push("/checkout");
+                  checkout({
+                    lineItems: [
+                      {
+                        price: process.env.PRICE_ID,
+                        quantity: 1,
+                      },
+                    ],
+                  });
                 }}
               >
                 <h2>CHECKOUT</h2>
