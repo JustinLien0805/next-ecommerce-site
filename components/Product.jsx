@@ -73,9 +73,6 @@ const Product = ({ product }) => {
                   <FaMinus className="" size="1.5em" />
                 </button>
               </div>
-              <button className="text-white border-[1px] border-white rounded-lg hover:text-black hover:bg-white">
-                Add to Cart
-              </button>
             </div>
           )}
         </div>

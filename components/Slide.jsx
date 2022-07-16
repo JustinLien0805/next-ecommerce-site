@@ -59,7 +59,7 @@ const Slide = () => {
       </svg>
       <AnimatePresence initial={false} custom={direction}>
         <motion.img
-          className="h-fit w-fit"
+          className="h-full w-full object-cover"
           key={page}
           src={images[imageIndex]}
           custom={direction}
